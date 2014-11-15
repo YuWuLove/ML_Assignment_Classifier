@@ -28,7 +28,7 @@ public class Classifier {
 		Loaddata("dataset2.txt");
 		Loaddata("dataset3.txt");
 		
-		System.out.println("Total Male:\t"+people.GetTotalNum());
+		System.out.println("Total Num:\t"+people.GetTotalNum());
 		System.out.println("Total Male:\t"+people.GetTotalMale());
 		System.out.println("Total FeMale:\t"+people.GetTotalFeMale());
 		
@@ -82,7 +82,10 @@ public class Classifier {
 	 */
 	public void BalanceSample(int totaltrainingsample)
 	{
-		this.people.GetBalancePeople(totaltrainingsample,this.trainingSet,this.testSet);;
+		this.people.GetBalancePeople(totaltrainingsample,this.trainingSet,this.testSet);
+		
+		System.out.println("TrainingSize:\t"+trainingSet.people.size());
+		System.out.println("TestSize:\t"+testSet.people.size());
 	} 
 	
 	public void Run()

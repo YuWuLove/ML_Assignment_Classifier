@@ -39,6 +39,9 @@ public class People {
 	
 		trainingSet.people.addAll(people.subList(0, i)) ;
 		testSet.people.addAll(people.subList(i, people.size())) ;
+		
+		System.out.println("Training Male:\t"+trainingSet.GetTotalMale());
+		System.out.println("Training FeMale:\t"+trainingSet.GetTotalFeMale());
 
 	}
 	

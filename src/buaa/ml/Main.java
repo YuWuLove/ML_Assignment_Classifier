@@ -4,12 +4,12 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO 自动生成的方法存根
-		Classifier c = new NaiveClassifier();
+		Classifier c = new LogisticClassifier();
 		c.Init();
-		c.BalanceSample(200);
-		//c.RandomSample(200);
+		//c.BalanceSample(100);
+		c.RandomSample(100);
 		c.Run();
-		c.TestMethod();
+		//c.TestMethod();
 	}
 
 }
