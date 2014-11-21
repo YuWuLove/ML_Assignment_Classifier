@@ -3,13 +3,20 @@ package buaa.ml;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		Classifier c = new LogisticClassifier();
 		c.Init();
 		//c.BalanceSample(100);
 		c.RandomSample(100);
 		c.Run();
 		//c.TestMethod();
+		
+		
+		//test for 
+		Classifier d = new DecisionTreeClassifier();
+		d.Init();
+		d.RandomSample(100);
+		d.Run();
 	}
 
 }

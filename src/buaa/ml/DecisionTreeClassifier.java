@@ -7,13 +7,11 @@ import java.io.IOException;
 import java.util.Iterator;
 
 import weka.classifiers.Evaluation;
-import weka.classifiers.functions.Logistic;
-import weka.classifiers.trees.Id3;
 import weka.classifiers.trees.J48;
 import weka.core.Instances;
 import weka.core.converters.ArffLoader;
 
-public class LogisticClassifier extends Classifier {
+public class DecisionTreeClassifier extends Classifier {
 
 	private void writewekafile(String filename, People set) {
 		try {
@@ -78,22 +76,15 @@ public class LogisticClassifier extends Classifier {
 
 			instancesTest.setClassIndex(instancesTest.numAttributes() - 1); // ���÷������������кţ���һ��Ϊ0�ţ���instancesTest.numAttributes()����ȡ����������
 
-			Logistic m_classifier = new Logistic();// Logistic���Խ���һ���߼��ع������
-			String options[] = new String[4];// ѵ����������
-			options[0] = "-R";// cost�����е�Ԥ����� Ӱ��cost�����в�����ģ���ı���
-			options[1] = "1E-5";// ��Ϊ1E-5
-			options[2] = "-M";// ����������
-			options[3] = "10";// ����������10��
-			m_classifier.setOptions(options);
-
-			m_classifier.buildClassifier(instancesTrain); // ѵ��
-			Evaluation eval = new Evaluation(instancesTrain); // ����������
-			eval.evaluateModel(m_classifier, instancesTest);// �ò������ݼ�������m_classifier
+			J48 j48_classifier = new J48();
+			j48_classifier.buildClassifier(instancesTrain);
+			Evaluation eval_id3 = new Evaluation(instancesTrain); // ����������
+			eval_id3.evaluateModel(j48_classifier, instancesTest);// �ò������ݼ�������m_classifier
 			System.out
-					.println("Logistic Regression on Evaluating Inflammation of urinary bladder");
-			System.out
-					.println(eval.toSummaryString("=== Summary ===\n", false)); // �����Ϣ
-			System.out.println(eval
+					.println("Decision Tree on Evaluating Inflammation of urinary bladder");
+			System.out.println(eval_id3.toSummaryString("=== Summary ===\n",
+					false)); // �����Ϣ
+			System.out.println(eval_id3
 					.toMatrixString("=== Confusion Matrix ===\n"));// Confusion
 																	// Matrix
 
