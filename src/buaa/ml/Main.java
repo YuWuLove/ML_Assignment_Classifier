@@ -15,6 +15,16 @@ public class Main {
 		kNN.Evaluate();
 	}
 	
+	public void AdaBoost()
+	{
+		//test for 
+		Classifier d = new AdaBoostClassifier();
+		d.Init();
+		d.RandomSample(200);
+		d.Run();
+	}
+	
+	
 	public void Logistic()
 	{
 		Classifier c = new LogisticClassifier();
@@ -45,7 +55,7 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO 锟皆讹拷锟斤拷锟缴的凤拷锟斤拷锟斤拷锟�
 		Main m = new Main();
-		m.SVM();
+		m.AdaBoost();
 		
 	}
 
