@@ -16,6 +16,7 @@ public class Classifier {
 	People people;
 	People trainingSet;
 	People testSet;
+	public double res;
 	
 	public void Init()
 	{
@@ -64,6 +65,8 @@ public class Classifier {
 			e.printStackTrace();
 		}
 	}
+	
+	
 	
 	/**
 	 * @param total 

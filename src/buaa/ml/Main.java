@@ -11,6 +11,7 @@ public class Main {
 	{
 		KNNClassifier kNN = new KNNClassifier();
 		kNN.Init();
+		kNN.RandomSample(100);
 		kNN.Run();
 		kNN.Evaluate();
 	}
@@ -20,8 +21,15 @@ public class Main {
 		//test for 
 		Classifier d = new AdaBoostClassifier();
 		d.Init();
-		d.RandomSample(200);
-		d.Run();
+		int i = 5;
+		double t = 0;
+		while(i-->0)
+		{
+			d.RandomSample((int)(542*0.8));
+			d.Run();
+			t+=d.res;
+		}
+		System.out.println(t/5);
 	}
 	
 	
@@ -30,8 +38,15 @@ public class Main {
 		Classifier c = new LogisticClassifier();
 		c.Init();
 		//c.BalanceSample(100);
-		c.RandomSample(100);
-		c.Run();
+		int i = 5;
+		double t = 0;
+		while(i-->0)
+		{
+			c.RandomSample((int)(542*0.8));
+			c.Run();
+			t+=c.res;
+		}
+		System.out.println(t/5);
 		//c.TestMethod();	
 	}
 
@@ -40,22 +55,36 @@ public class Main {
 		//test for 
 		Classifier d = new DecisionTreeClassifier();
 		d.Init();
-		d.RandomSample(100);
-		d.Run();
+		int i = 5;
+		double t = 0;
+		while(i-->0)
+		{
+			d.RandomSample((int)(542*0.8));
+			d.Run();
+			t+=d.res;
+		}
+		System.out.println(t/5);
 	}
 	
 	public void SVM()
 	{
 		SVMClassifier s = new SVMClassifier();
 		s.Init();
-		s.RandomSample(300);
-		s.Run();
+		int i = 5;
+		double t = 0;
+		while(i-->0)
+		{
+			s.RandomSample((int)(542*0.8));
+			s.Run();
+			t+=s.res;
+		}
+		System.out.println(t/5);
 		
 	}
 	public static void main(String[] args) {
 		// TODO 锟皆讹拷锟斤拷锟缴的凤拷锟斤拷锟斤拷锟�
 		Main m = new Main();
-		m.AdaBoost();
+		m.Logistic();
 		
 	}
 

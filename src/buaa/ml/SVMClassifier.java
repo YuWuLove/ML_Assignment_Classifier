@@ -96,5 +96,6 @@ public class SVMClassifier extends Classifier {
 		}catch(IOException e){
 			e.printStackTrace();
 		}
+		this.res = accuracy;
 	}
 }

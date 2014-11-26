@@ -82,6 +82,8 @@ public class AdaBoostClassifier extends Classifier {
 			classifier.setOptions(weka.core.Utils.splitOptions(optionString));
 			classifier.buildClassifier(instancesTrain); 
 			
+			//
+			
 			Evaluation eval_id3 = new Evaluation(instancesTrain); // 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
 			eval_id3.evaluateModel(classifier, instancesTest);// 锟矫诧拷锟斤拷锟斤拷锟捷硷拷锟斤拷锟斤拷锟斤拷m_classifier
 			System.out
@@ -91,7 +93,7 @@ public class AdaBoostClassifier extends Classifier {
 			System.out.println(eval_id3
 					.toMatrixString("=== Confusion Matrix ===\n"));// Confusion
 																	// Matrix
-
+			this.res = eval_id3.pctCorrect();
 		} catch (Exception e) {
 			System.out.println("Exception : " + e.getMessage());
 		}

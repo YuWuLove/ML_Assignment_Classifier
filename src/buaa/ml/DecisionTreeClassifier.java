@@ -64,30 +64,30 @@ public class DecisionTreeClassifier extends Classifier {
 												// (attribute relation file
 												// format) format.
 
-			File inputFile = new File("weka/train.txt");// ����ѵ���ļ�
+			File inputFile = new File("weka/train.txt");// 锟斤拷锟斤拷训锟斤拷锟侥硷拷
 			atf.setFile(inputFile);
-			Instances instancesTrain = atf.getDataSet(); // �õ���ʽ����ѵ������
+			Instances instancesTrain = atf.getDataSet(); // 锟矫碉拷锟斤拷式锟斤拷锟斤拷训锟斤拷锟斤拷锟斤拷
 
-			instancesTrain.setClassIndex(instancesTrain.numAttributes() - 1);// �������λ��
+			instancesTrain.setClassIndex(instancesTrain.numAttributes() - 1);// 锟斤拷锟斤拷锟斤拷锟轿伙拷锟�
 
-			inputFile = new File("weka/test.txt");// ��������ļ�
+			inputFile = new File("weka/test.txt");// 锟斤拷锟斤拷锟斤拷锟斤拷募锟�
 			atf.setFile(inputFile);
-			Instances instancesTest = atf.getDataSet(); // �õ���ʽ���Ĳ�������
+			Instances instancesTest = atf.getDataSet(); // 锟矫碉拷锟斤拷式锟斤拷锟侥诧拷锟斤拷锟斤拷锟斤拷
 
-			instancesTest.setClassIndex(instancesTest.numAttributes() - 1); // ���÷������������кţ���һ��Ϊ0�ţ���instancesTest.numAttributes()����ȡ����������
+			instancesTest.setClassIndex(instancesTest.numAttributes() - 1); // 锟斤拷锟矫凤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟叫号ｏ拷锟斤拷一锟斤拷为0锟脚ｏ拷锟斤拷instancesTest.numAttributes()锟斤拷锟斤拷取锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
 
 			J48 j48_classifier = new J48();
 			j48_classifier.buildClassifier(instancesTrain);
-			Evaluation eval_id3 = new Evaluation(instancesTrain); // ����������
-			eval_id3.evaluateModel(j48_classifier, instancesTest);// �ò������ݼ�������m_classifier
+			Evaluation eval_id3 = new Evaluation(instancesTrain); // 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
+			eval_id3.evaluateModel(j48_classifier, instancesTest);// 锟矫诧拷锟斤拷锟斤拷锟捷硷拷锟斤拷锟斤拷锟斤拷m_classifier
 			System.out
 					.println("Decision Tree on Evaluating Inflammation of urinary bladder");
 			System.out.println(eval_id3.toSummaryString("=== Summary ===\n",
-					false)); // �����Ϣ
+					false)); // 锟斤拷锟斤拷锟较�
 			System.out.println(eval_id3
 					.toMatrixString("=== Confusion Matrix ===\n"));// Confusion
 																	// Matrix
-
+			this.res = eval_id3.pctCorrect();
 		} catch (Exception e) {
 			System.out.println("Exception : " + e.getMessage());
 		}

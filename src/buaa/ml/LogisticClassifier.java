@@ -66,36 +66,37 @@ public class LogisticClassifier extends Classifier {
 												// (attribute relation file
 												// format) format.
 
-			File inputFile = new File("weka/train.txt");// ����ѵ���ļ�
+			File inputFile = new File("weka/train.txt");// 锟斤拷锟斤拷训锟斤拷锟侥硷拷
 			atf.setFile(inputFile);
-			Instances instancesTrain = atf.getDataSet(); // �õ���ʽ����ѵ������
+			Instances instancesTrain = atf.getDataSet(); // 锟矫碉拷锟斤拷式锟斤拷锟斤拷训锟斤拷锟斤拷锟斤拷
 
-			instancesTrain.setClassIndex(instancesTrain.numAttributes() - 1);// �������λ��
+			instancesTrain.setClassIndex(instancesTrain.numAttributes() - 1);// 锟斤拷锟斤拷锟斤拷锟轿伙拷锟�
 
-			inputFile = new File("weka/test.txt");// ��������ļ�
+			inputFile = new File("weka/test.txt");// 锟斤拷锟斤拷锟斤拷锟斤拷募锟�
 			atf.setFile(inputFile);
-			Instances instancesTest = atf.getDataSet(); // �õ���ʽ���Ĳ�������
+			Instances instancesTest = atf.getDataSet(); // 锟矫碉拷锟斤拷式锟斤拷锟侥诧拷锟斤拷锟斤拷锟斤拷
 
-			instancesTest.setClassIndex(instancesTest.numAttributes() - 1); // ���÷������������кţ���һ��Ϊ0�ţ���instancesTest.numAttributes()����ȡ����������
+			instancesTest.setClassIndex(instancesTest.numAttributes() - 1); // 锟斤拷锟矫凤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟叫号ｏ拷锟斤拷一锟斤拷为0锟脚ｏ拷锟斤拷instancesTest.numAttributes()锟斤拷锟斤拷取锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
 
-			Logistic m_classifier = new Logistic();// Logistic���Խ���һ���߼��ع������
-			String options[] = new String[4];// ѵ����������
-			options[0] = "-R";// cost�����е�Ԥ����� Ӱ��cost�����в�����ģ���ı���
-			options[1] = "1E-5";// ��Ϊ1E-5
-			options[2] = "-M";// ����������
-			options[3] = "10";// ����������10��
+			Logistic m_classifier = new Logistic();// Logistic锟斤拷锟皆斤拷锟斤拷一锟斤拷锟竭硷拷锟截癸拷锟斤拷锟斤拷锟�
+			String options[] = new String[4];// 训锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
+			options[0] = "-R";// cost锟斤拷锟斤拷锟叫碉拷预锟斤拷锟斤拷锟�影锟斤拷cost锟斤拷锟斤拷锟叫诧拷锟斤拷锟斤拷模锟斤拷锟侥憋拷锟斤拷
+			options[1] = "1E-5";// 锟斤拷为1E-5
+			options[2] = "-M";// 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
+			options[3] = "100";// 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷10锟斤拷
 			m_classifier.setOptions(options);
 
-			m_classifier.buildClassifier(instancesTrain); // ѵ��
-			Evaluation eval = new Evaluation(instancesTrain); // ����������
-			eval.evaluateModel(m_classifier, instancesTest);// �ò������ݼ�������m_classifier
+			m_classifier.buildClassifier(instancesTrain); // 训锟斤拷
+			Evaluation eval = new Evaluation(instancesTrain); // 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
+			eval.evaluateModel(m_classifier, instancesTest);// 锟矫诧拷锟斤拷锟斤拷锟捷硷拷锟斤拷锟斤拷锟斤拷m_classifier
 			System.out
 					.println("Logistic Regression on Evaluating Inflammation of urinary bladder");
 			System.out
-					.println(eval.toSummaryString("=== Summary ===\n", false)); // �����Ϣ
+					.println(eval.toSummaryString("=== Summary ===\n", false)); // 锟斤拷锟斤拷锟较�
 			System.out.println(eval
 					.toMatrixString("=== Confusion Matrix ===\n"));// Confusion
 																	// Matrix
+			this.res = eval.errorRate();
 
 		} catch (Exception e) {
 			System.out.println("Exception : " + e.getMessage());
