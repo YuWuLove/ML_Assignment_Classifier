@@ -1,0 +1,114 @@
+Total Male:	542.0
+Total Male:	408.0
+Total FeMale:	134.0
+------------------------------------
+Training Male:	100.0
+Training FeMale:	100.0
+Logistic Regression on Evaluating Inflammation of urinary bladder
+=== Summary ===
+
+Correctly Classified Instances         306               89.4737 %
+Incorrectly Classified Instances        36               10.5263 %
+Kappa statistic                          0.5778
+Mean absolute error                      0.1579
+Root mean squared error                  0.2824
+Relative absolute error                 31.5807 %
+Root relative squared error             56.4705 %
+Total Number of Instances              342     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  31   3 |   a = f
+  33 275 |   b = m
+
+Total Male:	542.0
+Total Male:	408.0
+Total FeMale:	134.0
+------------------------------------
+Training Male:	50.0
+Training FeMale:	50.0
+Logistic Regression on Evaluating Inflammation of urinary bladder
+=== Summary ===
+
+Correctly Classified Instances         395               89.3665 %
+Incorrectly Classified Instances        47               10.6335 %
+Kappa statistic                          0.6899
+Mean absolute error                      0.1173
+Root mean squared error                  0.3032
+Relative absolute error                 23.4659 %
+Root relative squared error             60.6369 %
+Total Number of Instances              442     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  73  11 |   a = f
+  36 322 |   b = m
+
+Total Male:	542.0
+Total Male:	408.0
+Total FeMale:	134.0
+------------------------------------
+Logistic Regression on Evaluating Inflammation of urinary bladder
+=== Summary ===
+
+Correctly Classified Instances         311               90.9357 %
+Incorrectly Classified Instances        31                9.0643 %
+Kappa statistic                          0.7583
+Mean absolute error                      0.1358
+Root mean squared error                  0.252 
+Relative absolute error                 36.3005 %
+Root relative squared error             58.5353 %
+Total Number of Instances              342     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  70  14 |   a = f
+  17 241 |   b = m
+
+Total Male:	542.0
+Total Male:	408.0
+Total FeMale:	134.0
+------------------------------------
+Logistic Regression on Evaluating Inflammation of urinary bladder
+=== Summary ===
+
+Correctly Classified Instances         400               90.4977 %
+Incorrectly Classified Instances        42                9.5023 %
+Kappa statistic                          0.7427
+Mean absolute error                      0.1398
+Root mean squared error                  0.256 
+Relative absolute error                 35.6691 %
+Root relative squared error             59.6197 %
+Total Number of Instances              442     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  87  18 |   a = f
+  24 313 |   b = m
+
+Total Male:	542.0
+Total Male:	408.0
+Total FeMale:	134.0
+------------------------------------
+Logistic Regression on Evaluating Inflammation of urinary bladder
+=== Summary ===
+
+Correctly Classified Instances         219               90.4959 %
+Incorrectly Classified Instances        23                9.5041 %
+Kappa statistic                          0.7345
+Mean absolute error                      0.1377
+Root mean squared error                  0.2445
+Relative absolute error                 36.9927 %
+Root relative squared error             57.5299 %
+Total Number of Instances              242     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  45  12 |   a = f
+  11 174 |   b = m
+

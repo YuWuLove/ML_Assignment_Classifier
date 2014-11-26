@@ -1,15 +1,91 @@
 package buaa.ml;
 
 public class Main {
-
-	public static void main(String[] args) {
-		// TODO 自动生成的方法存根
-		Classifier c = new NaiveClassifier();
+	
+	public Main()
+	{
+		;
+	}
+	
+	public void Knn()
+	{
+		KNNClassifier kNN = new KNNClassifier();
+		kNN.Init();
+		kNN.RandomSample(100);
+		kNN.Run();
+		kNN.Evaluate();
+	}
+	
+	public void AdaBoost()
+	{
+		//test for 
+		Classifier d = new AdaBoostClassifier();
+		d.Init();
+		int i = 5;
+		double t = 0;
+		while(i-->0)
+		{
+			d.RandomSample((int)(542*0.8));
+			d.Run();
+			t+=d.res;
+		}
+		System.out.println(t/5);
+	}
+	
+	
+	public void Logistic()
+	{
+		Classifier c = new LogisticClassifier();
 		c.Init();
-		c.BalanceSample(200);
-		//c.RandomSample(200);
-		c.Run();
-		c.TestMethod();
+		//c.BalanceSample(100);
+		int i = 5;
+		double t = 0;
+		while(i-->0)
+		{
+			c.RandomSample((int)(542*0.8));
+			c.Run();
+			t+=c.res;
+		}
+		System.out.println(t/5);
+		//c.TestMethod();	
+	}
+
+	public void decision_tree()
+	{
+		//test for 
+		Classifier d = new DecisionTreeClassifier();
+		d.Init();
+		int i = 5;
+		double t = 0;
+		while(i-->0)
+		{
+			d.RandomSample((int)(542*0.8));
+			d.Run();
+			t+=d.res;
+		}
+		System.out.println(t/5);
+	}
+	
+	public void SVM()
+	{
+		SVMClassifier s = new SVMClassifier();
+		s.Init();
+		int i = 5;
+		double t = 0;
+		while(i-->0)
+		{
+			s.RandomSample((int)(542*0.8));
+			s.Run();
+			t+=s.res;
+		}
+		System.out.println(t/5);
+		
+	}
+	public static void main(String[] args) {
+		// TODO 閿熺殕璁规嫹閿熸枻鎷烽敓缂寸殑鍑ゆ嫹閿熸枻鎷烽敓鏂ゆ嫹閿燂拷
+		Main m = new Main();
+		m.Logistic();
+		
 	}
 
 }
